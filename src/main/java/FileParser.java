@@ -21,6 +21,7 @@ public class FileParser {
             System.out.println("File not found");
             e.printStackTrace();
         } catch (IOException e) {
+            System.out.println("Error while reading input file");
             e.printStackTrace();
         }
 
