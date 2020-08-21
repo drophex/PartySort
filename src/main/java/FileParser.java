@@ -5,8 +5,7 @@ import java.util.List;
 
 public class FileParser {
     public List<Vote> getListOfVotes() {
-
-        File file = new File("myFile.txt");
+        File file = new File("./src/main/resources/participants.txt");
         BufferedReader br;
         List<Vote> votes = new ArrayList<>();
         List<String> lines = new ArrayList<>();
