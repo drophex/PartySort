@@ -7,7 +7,6 @@ import java.util.Map;
 import static java.util.stream.Collectors.groupingBy;
 
 public class StreamLessFilter implements Filter{
-    //TODO: try to get rid of for loop and use stream api
     public List<Vote> filterResults(List<Vote> unfilteredList) {
         unfilteredList.forEach(vote -> vote.setName(vote.getName().toUpperCase()));
         Map<String, List<Vote>> unfilteredGroupedMap = unfilteredList.stream().collect(groupingBy(Vote::getName));
