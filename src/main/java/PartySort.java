@@ -3,12 +3,21 @@ import java.util.List;
 public class PartySort {
     public static void main(String[] args) {
         FileParser fileParser = new FileParser();
-        Filter filter = new StreamLessFilter();
+        Filter streamLessFilter = new StreamLessFilter();
+        Filter streamsFilter = new StreamsFilter();
 
         List<Vote> unfilteredList = fileParser.getListOfVotes();
-        List<Vote> filteredList = filter.filterResults(unfilteredList);
+
+        Util.printHeader("streamless filter");
+        List<Vote> filteredList = streamLessFilter.filterResults(unfilteredList);
+        filteredList.forEach(System.out::println);
+
+        Util.printHeader("filter with streams");
+        filteredList = streamsFilter.filterResults(unfilteredList);
         filteredList.forEach(System.out::println);
     }
+
+
 
 
 }
