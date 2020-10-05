@@ -4,8 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileParser {
+
+    public FileParser() {
+    }
+
+    public FileParser(String path) {
+        this.path = path;
+    }
+
+    private String path;
     public List<Vote> getListOfVotes() {
-        File file = new File("./src/main/resources/participants.txt");
+        File file = new File(path);
         BufferedReader br;
         List<Vote> votes = new ArrayList<>();
         List<String> lines = new ArrayList<>();

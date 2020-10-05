@@ -5,6 +5,13 @@ public class Vote {
     private String name;
     private boolean isParticipating;
 
+    public Vote() {}
+    public Vote (String name, LocalDateTime timestamp, boolean isParticipating) {
+        setName(name);
+        setTimestamp(timestamp);
+        setParticipating(isParticipating);
+    }
+
     public LocalDateTime getTimestamp() {
         return timestamp;
     }
